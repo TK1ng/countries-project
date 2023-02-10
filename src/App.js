@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { BsCheckLg } from 'react-icons/bs';
 import { selectPotentials } from "./redux/slices/potentialCountriesSlice";
 import Header from "./Components/Header";
 import MainDisplay from "./Components/MainDisplay";
@@ -10,6 +9,7 @@ import "./App.css";
 function App() {
     const potentials = useSelector(selectPotentials);
     const currentDisplay = useSelector(selectDisplay);
+    console.log(currentDisplay);
 
     return (
         <div className="App font-link">
