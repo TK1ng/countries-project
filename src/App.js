@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
+import { BsCheckLg } from 'react-icons/bs';
 import { selectPotentials } from "./redux/slices/potentialCountriesSlice";
 import Header from "./Components/Header";
 import MainDisplay from "./Components/MainDisplay";
 import OptionDisplay from "./Components/OptionDisplay";
 import { selectDisplay } from "./redux/slices/displayCountrySlice";
 import "./App.css";
-import { BsCheckLg } from 'react-icons/bs';
 
 function App() {
     const potentials = useSelector(selectPotentials);
