@@ -3,6 +3,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectDisplay } from "../redux/slices/displayCountrySlice";
 
+const { REACT_APP_API_KEY } = process.env;
+
 const Weather = () => {
     const [weather, setWeather] = useState();
     const currentDisplay = useSelector(selectDisplay);
@@ -16,7 +18,7 @@ const Weather = () => {
             url: 'https://weatherapi-com.p.rapidapi.com/current.json',
             params: { q: `${latitude},${longitude}` },
             headers: {
-                'X-RapidAPI-Key': '2e1eb485a8msh58c29bd1e6d9e4dp1963a4jsn293239bdef7a',
+                'X-RapidAPI-Key': REACT_APP_API_KEY,
                 'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
             }
         };
