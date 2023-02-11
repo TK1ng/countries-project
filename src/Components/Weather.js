@@ -11,7 +11,6 @@ const Weather = () => {
     const longitude = currentDisplay.latlng[1];
 
     useEffect(() => {
-
         const options = {
             method: 'GET',
             url: 'https://weatherapi-com.p.rapidapi.com/current.json',
@@ -27,11 +26,11 @@ const Weather = () => {
         }).catch(error => {
             console.error(error);
         });
-    }, [])
+    }, []);
 
     return (
         <div>
-            <table className="overview-table">
+            {weather ? (<table className="overview-table">
                 <tbody>
                     <tr>
                         <td>Conditions: {weather.current.condition.text}</td>
@@ -49,8 +48,8 @@ const Weather = () => {
                         <td>Wind Speed: {weather.current.wind_mph} mph / {weather.current.wind_kph} kph</td>
                     </tr>
                 </tbody>
-            </table>
-        </div>
+            </table>) : (<p>No data</p>)}
+        </div >
     );
 };
 

@@ -9,7 +9,6 @@ import "./App.css";
 function App() {
     const potentials = useSelector(selectPotentials);
     const currentDisplay = useSelector(selectDisplay);
-    console.log(currentDisplay);
 
     return (
         <div className="App font-link">
